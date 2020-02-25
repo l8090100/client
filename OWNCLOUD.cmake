@@ -1,22 +1,12 @@
-<<<<<<< HEAD
-set( APPLICATION_NAME       "ownCloud" )
-set( APPLICATION_SHORTNAME  "ownCloud" )
-set( APPLICATION_EXECUTABLE "owncloud" )
-set( APPLICATION_DOMAIN     "owncloud.com" )
-set( APPLICATION_VENDOR     "ownCloud" )
-set( APPLICATION_UPDATE_URL "https://updates.owncloud.com/client/" CACHE STRING "URL for updater" )
-set( APPLICATION_ICON_NAME  "owncloud" )
-set( APPLICATION_VIRTUALFILE_SUFFIX "owncloud" CACHE STRING "Virtual file suffix (not including the .)")
-=======
 set( APPLICATION_NAME       "Tine 2.0 Drive" )
 set( APPLICATION_SHORTNAME  "tine20drive" )
 set( APPLICATION_EXECUTABLE "tine20drive" )
 set( APPLICATION_DOMAIN     "tine20.com" )
+set( APPLICATION_BASE       "owncloud" )
 set( APPLICATION_VENDOR     "Metaways Infosystems GmbH" )
 set( APPLICATION_UPDATE_URL "https://api.tine20.net/driveClientUpdateCheck" CACHE string "URL for updater" )
 set( APPLICATION_ICON_NAME  "tine20drive" )
 set( APPLICATION_VIRTUALFILE_SUFFIX "tine20drive" CACHE STRING "Virtual file suffix (not including the .)")
->>>>>>> fa3779308... added tine20 theme
 
 set( LINUX_PACKAGE_SHORTNAME "tine20drive" )
 

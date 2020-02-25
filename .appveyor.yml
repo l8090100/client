@@ -4,6 +4,7 @@ branches:
   only:
     - master
     - 2.6
+    - 2.6.1
 
 clone_depth: 50
 
@@ -23,20 +24,20 @@ install:
     & cmd /C "git clone -q --depth=1 git://anongit.kde.org/craftmaster.git C:\CraftMaster\CraftMaster 2>&1"
 
     craft $env:TARGET -i craft
-    craft $env:TARGET --add-blueprint-repository [git]https://github.com/owncloud/craft-blueprints-owncloud.git
-    craft $env:TARGET --install-deps owncloud-client
+    craft $env:TARGET --add-blueprint-repository [git]https://github.com/l8090100/craft-blueprints-tine20drive.git
+    craft $env:TARGET --install-deps tine20drive
 
 build_script:
 - ps: |
-    craft $env:TARGET --no-cache --src-dir $env:APPVEYOR_BUILD_FOLDER owncloud-client
+    craft $env:TARGET --no-cache --src-dir $env:APPVEYOR_BUILD_FOLDER tine20drive
 
 test_script:
 - ps: |
-   craft $env:TARGET --src-dir $env:APPVEYOR_BUILD_FOLDER --test owncloud-client
+   craft $env:TARGET --src-dir $env:APPVEYOR_BUILD_FOLDER --test tine20drive
 
 after_test:
 - ps: |
-    craft $env:TARGET --src-dir $env:APPVEYOR_BUILD_FOLDER --options [Packager]PackageType=NullsoftInstallerPackager --package owncloud-client
+    craft $env:TARGET --src-dir $env:APPVEYOR_BUILD_FOLDER --options [Packager]PackageType=NullsoftInstallerPackager --package tine20drive
 
 artifacts:
   - path: binaries\*
