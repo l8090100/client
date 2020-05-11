@@ -1,10 +1,8 @@
 version: '{build}-{branch}'
 
 branches:
-  only:
+  except:
     - master
-    - 2.6
-    - 2.6.1
 
 clone_depth: 50
 
@@ -40,8 +38,21 @@ after_test:
     craft $env:TARGET --src-dir $env:APPVEYOR_BUILD_FOLDER --options [Packager]PackageType=NullsoftInstallerPackager --package tine20drive
 
 artifacts:
-  - path: binaries\*
+  - path: binaries\**\*.exe
+    name: tine20drive_artifact
 
+deploy:
+  release: l8090100drive-v$(appveyor_build_version)
+  description: 'l8090100 Release description'
+  provider: GitHub
+  auth_token:
+    secure: Mqsm8FyNM10NNnknn1YbXib+jYyK4S1ZQvlUNyN6e9yKHYeCHuajpJ0MUdPUR1C5 # your encrypted token from GitHub
+  artifact: tine20drive_artifact           # upload all NuGet packages to release assets
+  draft: true
+  prerelease: false
+  on:
+    branch: v2.6.1-l8090100                 # release from master branch only
+    APPVEYOR_REPO_TAG: true        # deploy on tag push only
 
 environment:
     matrix:
