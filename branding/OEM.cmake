@@ -3,7 +3,7 @@ set( APPLICATION_SHORTNAME  "tine20drive" )
 set( APPLICATION_EXECUTABLE "tine20drive" )
 set( APPLICATION_DOMAIN     "tine20.com" )
 set( APPLICATION_VENDOR     "Metaways Infosystems GmbH" )
-set( APPLICATION_UPDATE_URL "https://api.tine20.net/driveClientUpdateCheck/" CACHE STRING "URL for updater" )
+set( APPLICATION_UPDATE_URL "http://127.0.0.1:8080" CACHE STRING "URL for updater" )
 set( APPLICATION_ICON_NAME  "tine20drive" )
 set( APPLICATION_VIRTUALFILE_SUFFIX "tine20drive" CACHE STRING "Virtual file suffix (not including the .)")
 
